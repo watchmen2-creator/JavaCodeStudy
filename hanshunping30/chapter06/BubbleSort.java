@@ -1,7 +1,7 @@
 public class BubbleSort {
 	public static void main(String[] args){
-		int [] arr = { 24 , 69 , 80 , 110 , 130 , 150 , 300 , 400 , 410 };
-		// int [] arr = { 24 , 69 , 80 , 57 , 13 , -1 , 30 , 200 , -110 };
+		// int [] arr = { 24 , 69 , 80 , 110 , 130 , 150 , 300 , 400 , 410 };
+		int [] arr = { 24 , 69 , 80 , 57 , 13 , -1 , 30 , 200 , -110 };
 		int arrLength = arr.length;
 		int temp , changeNum ;
 		int i = arrLength - 1 ;
