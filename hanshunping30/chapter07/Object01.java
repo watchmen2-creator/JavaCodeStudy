@@ -12,5 +12,23 @@ public class Object01 {
 		}else{
 			System.out.println("Mrs. Zhang doesn't have this cat");
 		}
+
+		Cat objCat1 = new Cat() ;
+		objCat1.name = "xiao bai" ;
+		objCat1.age = 3 ;
+		objCat1.color = "white" ;
+		Cat objCat2 = new Cat() ;
+		objCat2.name = "xiao hua" ;
+		objCat2.age = 100 ;
+		objCat2.color = "flower" ;
+
+
 	}
+}
+
+
+class Cat{
+	String name ;
+	int age ;
+	String color ;
 }
