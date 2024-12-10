@@ -39,6 +39,7 @@ class HomeWork05{
 		double avg ;
 		int maxNum ;
 		int index = arr.length - 1 ;
+		int index8 = -1 ;
 		for (int i = 0 ; i < arr.length ; i++){
 			arr[i] = iran.nextInt(100) + 1 ;
 			sum += arr[i] ;
@@ -47,11 +48,17 @@ class HomeWork05{
 		for(int i = arr.length - 1  ; i >= 0 ; i--){
 			maxNum = (maxNum >= arr[i]) ? maxNum : arr[i] ;
 			index = (maxNum == arr[i])?i:index;
+			index8 = (8 == arr[i])?i:index8;
 			System.out.print(arr[i] + " ");
 		}
 		System.out.println();
 		avg = sum / 10.0 ;
-		System.out.println("avg = " + avg + " index = " + index);
+		if(index8 == -1){
+			System.out.println("avg = " + avg + " index = " + index + " There's no 8");
+		}else{
+			System.out.println("avg = " + avg + " index = " + index + " There's 8, in position " + (index8 + 1 ));
+		}
+		
 
 	}
 }
@@ -64,7 +71,7 @@ class HomeWork07{
 		int [] arr = new int[length];
 		Random iran = new Random();
 		for (int i = 0 ; i < length ; i++){
-			arr[i] = iran.Random(100) + 1 ;
+			arr[i] = iran.nextInt(100) + 1 ;
 		}
 		System.out.println("The elements of this array are:");
 		for(int i = 0 ; i < length ; i++){
@@ -72,11 +79,36 @@ class HomeWork07{
 		}
 		System.out.println();
 		int temp = 0 ;
-		for (int i = length - 1 ; i >= 0 ; i--){
-			for (int j = 0 ; j <= i ; j++){
-				
+		int count = 0 ;
+		for (int i = length - 1 ; i > 0 ; i--){
+			for (int j = 0 ; j < i ; j++){
+				if(arr[j] > arr[j+1]){ //cong xiao dao da pai jiu  shi > ,cong da dao xiao pai jiushi <
+					temp = arr[j];
+					arr[j] = arr[j+1];
+					arr[j+1] = temp ;
+					count++ ;
+				}else{
+
+				}
 			}
+			if(count == 0 ){
+				break ;
+			}else{
+				count = 0 ;
+			}
+			System.out.println("The "+ (length - i) +" round of bubble sorting results are as follows:");
+			for(int c = 0 ; c < length ; c++){
+				System.out.print(arr[c] + " ");
+			}
+			System.out.println();
 		}
+
+
+		System.out.println("The final bubble sorting results are as follows");
+		for(int i = 0 ; i < length ; i++){
+			System.out.print(arr[i] + " ");
+		}
+		System.out.println();
 
 	}
 }
