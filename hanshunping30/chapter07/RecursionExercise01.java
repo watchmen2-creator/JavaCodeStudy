@@ -9,7 +9,7 @@ public class RecursionExercise01 {
 		System.out.println("monkeysEatPeaches");
 		System.out.println(fun.monkeysEatPeaches(10));
 		
-		System.out.println("monkeysEatPeaches");
+		System.out.println("mouseOutMaze");
 		int [][] maze = new int[8][7];
 		//dingyi waiweiqiangbi 
 		for (int i = 0 ;i < maze.length ; i++){
@@ -20,6 +20,20 @@ public class RecursionExercise01 {
 			}
 		}
 
+		//dingyi neibuqiangbi
+		maze[3][1] = -1 ;
+		maze[3][2] = -1 ;
+		// maze[1][2] = -1 ;
+		maze[2][2] = -1 ;
+		// maze[2][3] = -1 ;
+		// maze[5][4] = -1 ;
+		// maze[5][5] = -1 ;
+		// maze[2][4] = -1 ;
+		// maze[2][5] = -1 ;
+
+
+		fun.findWay(maze , 1 , 1 );
+		// fun.mouseOutMaze(maze , 1 , 1 );
 
 		for (int a = 0 ;a < maze.length ; a++){
 			for(int b = 0 ; b < maze[a].length ; b++){
@@ -47,8 +61,36 @@ class Function{
 		return (monkeysEatPeaches(day - 1) + 1 )  * 2;		
 	}
 
-	public void mouseOutMaze(){
+	public boolean mouseOutMaze(int [][]  map , int x , int y){
+		return true ;
+	}
 
+	/*
+		map shi ditu ,x \ y shi weizhi
+		0 > keyizou ; -1 > buneng zou ; 1 > keyizou tongde lu ; 2 > zouguodanshizoubutong 
+	*/
+	public boolean findWay(int [][] map , int x , int y ){
+		if(map[6][5] == 1){
+			return true ;
+		}else{
+			if(map[x][y] == 0){
+				map[x][y] = 1 ;
+				if(findWay(map , x + 1 , y)){
+					return true ;
+				}else if(findWay(map , x , y + 1)){
+					return true ;
+				}else if(findWay(map , x - 1 , y)){
+					return true ;
+				}else if(findWay(map , x , y - 1)){
+					return true ;
+				}else{
+					map[x][y] = 2 ;
+					return false ;
+				}
+			}else {//-1\1\2
+				return false ;
+			}
+		}
 	}
 
 }
