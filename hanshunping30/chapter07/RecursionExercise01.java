@@ -41,9 +41,38 @@ public class RecursionExercise01 {
 			}
 			System.out.println();
 		}
+
+		System.out.println("HanoiTower");
+		Plate[] p = new Plate[5];
+		for (int i = 0 ; i < p.length ; i++){
+			p[i] = new Plate() ;
+			p[i].size = i+1 ;
+			p[i].position = 'A' ;
+		}
+
+		fun.printHanoiTower(p);
+		fun.HanoiTower(p , p[0].position , 'B' , 'C');
+		fun.printHanoiTower(p);
+
+		System.out.println("Eight Queens");
+		int [][] chessboard = new int[8][8];
+		chessboard[1][1] = 1 ;
+		fun.eightQueens(chessboard);
+		for(int i = 0 ; i < 8 ; i++){
+			for(int j = 0 ; j < 8 ; j++){
+				System.out.print(chessboard[i][j]);
+			}
+			System.out.println();
+		}
+
+
 	}
 }
 
+class Plate{
+	int size ;
+	char position ;
+}
 
 class Function{
 	public int fibonacci(int n){
@@ -92,5 +121,47 @@ class Function{
 			}
 		}
 	}
+
+	public void printHanoiTower(Plate[] p){
+		System.out.println("A\tB\tC");
+		for(int i = 0 ; i < p.length ; i++){
+			switch(p[i].position){
+			case 'A':{
+				System.out.println(p[i].size + "\t \t ");
+				break ;
+			}case 'B':{
+				System.out.println(" \t" + p[i].size + "\t ");
+				break ;
+			}case 'C':{
+				System.out.println(" \t \t" + p[i].size );
+				break ;
+			}
+			}
+		}
+		System.out.println("**************************");
+	}
+
+	public void HanoiTower(Plate[] p , char currentPosition , char targetPosition , char auxiliaryPosition){
+		if(p.length == 1 ){
+			p[0].position = targetPosition ;
+		}else{
+			Plate[] pc  = new Plate[p.length - 1 ] ;
+			for(int i = 0 ; i < pc.length ; i++ ){
+				pc[i] = p[i] ;
+			}
+			HanoiTower(pc ,pc[0].position , auxiliaryPosition ,targetPosition );
+			// printHanoiTower(p);
+			p[p.length-1].position = targetPosition ;
+			// printHanoiTower(p);
+			HanoiTower(pc ,auxiliaryPosition , targetPosition ,currentPosition );
+			// printHanoiTower(p);
+		}
+	}
+
+	public void eightQueens(int [][] chessboard){
+		
+
+	}
+
 
 }
