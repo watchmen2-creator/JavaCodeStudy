@@ -69,6 +69,20 @@ public class HomeWork {
 		String[] resArr3 = h4.copyArr(oldArr3);		
 		h4.showArr(resArr3);
 
+		System.out.println("************************");
+		System.out.println("HomeWork05");
+		HomeWork05 h5 = new HomeWork05(1);
+		System.out.println(h5.perimeter());
+		System.out.println(h5.area());
+
+		System.out.println("************************");
+		System.out.println("HomeWork06");
+		HomeWork06 h6 = new HomeWork06(1.0 , 5.3);
+		// HomeWork06 h6 = new HomeWork06(1.0 , 0);
+		System.out.println(h6.add());
+		System.out.println(h6.minus());
+		System.out.println(h6.multiply());
+		System.out.println(h6.divide());
 
 
 		System.out.println("************************");
@@ -77,6 +91,13 @@ public class HomeWork {
 		HomeWork08 h8 = new HomeWork08() ;
 		h8.count2() ;//9
 		h8.count2() ;//10
+
+
+		System.out.println("************************");
+		System.out.println("HomeWork09") ;
+		HomeWork09 h9 = new HomeWork09("xiaoaojianghu" , 300) ;
+		h9.play();
+		h9.getInfo();
 
 
 		System.out.println("************************");
@@ -249,29 +270,33 @@ class HomeWork05 {
 	public HomeWork05 (double radius){
 		this.radius = radius ;
 	}
-	public double perimeter(double radius){
-		return 2 * 3.14159265354 * radius ;
+	public double perimeter(){
+		return 2 * Math.PI * radius ;
 	}
-	public double area(double radius){
-		return 3.14159265354 * radius * radius ;
+	public double area(){
+		return Math.PI * radius * radius ;
 	}
 }
 
 class HomeWork06 {	
 	double num1  , num2 ;
-	public double add (double num1 , double num2){
+	public HomeWork06 (double num1 , double num2 ){
+		this.num1 = num1 ;
+		this.num2 = num2 ;
+	}
+	public double add (){
 		return num1 + num2 ;
 	}
-	public double subtract(double num1 , double num2){
+	public double minus(){
 		return num1 - num2 ;
 	}
-	public double multiply(double num1 , double num2){
+	public double multiply(){
 		return num1 * num2 ;
 	}
-	public double divide(double num1 , double num2){
+	public Double divide(){
 		if(num2 == 0 ){
 			System.out.println("error");
-			return 0 ;
+			return null ;
 		}else{
 			return num1 / num2 ;			
 		}
@@ -308,6 +333,10 @@ class HomeWork08 {
 class HomeWork09 {	
 	String name ;
 	double times ;
+	public HomeWork09(String name ,double times ){
+		this.name = name ;
+		this.times = times ;
+	}
 	public void play (){
 		System.out.println("this.name : " + this.name ) ;
 		System.out.println("this.times : " + this.times ) ;
@@ -383,7 +412,7 @@ class Circle {
 		this.radius = radius ;
 	}
 	public double findArea (){
-		return 3.1415926 * this.radius * this.radius ;
+		return Math.PI * this.radius * this.radius ;
 	}
 }
 
