@@ -108,10 +108,12 @@ public class HomeWork {
 		System.out.println(h10_1.i); // 101
 		System.out.println(h10_2.i); // 101
 
+
 		System.out.println("************************");
 		System.out.println("HomeWork11") ;
 		HomeWork11 h11 = new HomeWork11();
 		System.out.println(h11.method(h11.method(10.0 , 20.0) , 100));
+
 
 		System.out.println("************************");
 		System.out.println("HomeWork12") ;
@@ -121,6 +123,7 @@ public class HomeWork {
 		h12_2.show() ;
 		HomeWork12 h12_3 = new HomeWork12 ("lina" , 'M' , 32 , "taxi driver" , 18546.78 );
 		h12_3.show() ;
+
 
 		System.out.println("************************");
 		System.out.println("HomeWork14") ;
@@ -360,7 +363,7 @@ class HomeWork10 {
 
 class HomeWork11 {
 	public double method (double n1 , double n2){
-		return n1 + n2 ;
+		return n1 + n2 ; 
 	}
 }
 
@@ -411,6 +414,9 @@ class Circle {
 	public Circle (double radius){
 		this.radius = radius ;
 	}
+	public void setRadius(double radius){
+		this.radius = radius ;
+	}
 	public double findArea (){
 		return Math.PI * this.radius * this.radius ;
 	}
@@ -420,7 +426,7 @@ class PassObject {
 	public void printAreas(Circle c , int times){
 		System.out.println("Radius\tArea");
 		for (int i = 1 ; i <= times ; i++){
-			c = new Circle(i);
+			c.setRadius(i);
 			System.out.println( c.radius + "\t" + c.findArea() );
 		}
 	}
