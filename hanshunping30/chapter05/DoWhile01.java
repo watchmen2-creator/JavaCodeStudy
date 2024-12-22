@@ -60,7 +60,7 @@ class DoWhileExercise02 {
 		int j ;
 		do {
 			System.out.println("huanqian , da ni " + i + " lianbian");
-			//j = iRandom.nextInt(2);
+			j = iRandom.nextInt(2);
 			System.out.println("the random num is :" + j);
 			if( j == 1){
 				System.out.println("huanqian");

@@ -1,3 +1,5 @@
+package chapter07;
+
 public class TestPerson {
 	public static void main(String[] args){
 		Person p1 = new Person("zhangsan" , 15) ;
