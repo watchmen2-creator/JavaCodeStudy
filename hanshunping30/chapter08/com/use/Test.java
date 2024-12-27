@@ -6,7 +6,6 @@ public class Test {
     public static void main(String[] args) {
         Dog dog = new Dog();
         System.out.println(dog);
-        System.out.println("ces");
 
         chapter08.com.xiaozhang.Dog dog2 = new chapter08.com.xiaozhang.Dog();
         System.out.println(dog2);
