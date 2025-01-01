@@ -6,10 +6,10 @@ public class Homework01 {
         persons[0] = new Person("lucy", 32, "model");
         persons[1] = new Person("Jack", 24, "director");
         persons[2] = new Person("white", 56, "doctor");
-        persons[3] = new Person("lucy", 16, "director");
-        persons[4] = new Person("Jack", 27, "director");
-        persons[5] = new Person("Jack", 50, "director");
-        persons[6] = new Person("Jack", 89, "director");
+        persons[3] = new Person("tom", 16, "director");
+        persons[4] = new Person("Jack", 27, "JavaEE工程师");
+        persons[5] = new Person("Jack", 50, "大数据工程师");
+        persons[6] = new Person("mary", 89, "PHP工程师");
         persons[7] = new Person("Jack", 62, "director");
         persons[8] = new Person("Jack", 38, "director");
         persons[9] = new Person("Jack", 54, "director");
@@ -22,10 +22,14 @@ public class Homework01 {
         //冒泡排序
         int count = 0; //定义一个变量记录每轮循环交换的次数，如果本轮交换的次数为0，就说明拍好序了，就不执行后续循环了
         Person temp = null;
-        for (int i = 0; i < persons.length - 1; i++) {
+        for (int i = 0; i < persons.length - 1; i++) {//外层循环：n个元素，循环n-1次，每次把一个最大的元素排出来
             count = 0;
-            for (int j = 0; j < persons.length - i - 1; j++) {
-                if (persons[j].getAge() > persons[j + 1].getAge()) {//如果前面的年龄比后边的大就交换位置
+            for (int j = 0; j < persons.length - i - 1; j++) {//内层循环：在当前轮次，剩余的 n - 轮次 个元素里面找出最大值并排序
+                //如果前面的年龄比后边的大就交换位置
+                if (persons[j].getAge() > persons[j + 1].getAge()) {//如果左边比右边大就交换位置，从小到大排序
+//                if (persons[j].getAge() < persons[j + 1].getAge()) {//若果左边比右边小就交换位置，从大到小排序
+//                if (persons[j].getName().length() > persons[j + 1].getName().length()) {//如果左边比右边名字长度长就交换位置，按名字长度从小到大排序
+
                     count++;
                     temp = persons[j];
                     persons[j] = persons[j + 1];
