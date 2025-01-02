@@ -2,17 +2,17 @@ package chapter08.com.hspedu.homework;
 
 public class Homework01 {
     public static void main(String[] args) {
-        Person[] persons = new Person[10];
-        persons[0] = new Person("lucy", 32, "model");
-        persons[1] = new Person("Jack", 24, "director");
-        persons[2] = new Person("white", 56, "doctor");
-        persons[3] = new Person("tom", 16, "director");
-        persons[4] = new Person("Jack", 27, "JavaEE工程师");
-        persons[5] = new Person("Jack", 50, "大数据工程师");
-        persons[6] = new Person("mary", 89, "PHP工程师");
-        persons[7] = new Person("Jack", 62, "director");
-        persons[8] = new Person("Jack", 38, "director");
-        persons[9] = new Person("Jack", 54, "director");
+        chapter08.com.hspedu.homework.homework13.Person[] persons = new chapter08.com.hspedu.homework.homework13.Person[10];
+        persons[0] = new chapter08.com.hspedu.homework.homework13.Person("lucy", 32, "model");
+        persons[1] = new chapter08.com.hspedu.homework.homework13.Person("Jack", 24, "director");
+        persons[2] = new chapter08.com.hspedu.homework.homework13.Person("white", 56, "doctor");
+        persons[3] = new chapter08.com.hspedu.homework.homework13.Person("tom", 16, "director");
+        persons[4] = new chapter08.com.hspedu.homework.homework13.Person("Jack", 27, "JavaEE工程师");
+        persons[5] = new chapter08.com.hspedu.homework.homework13.Person("Jack", 50, "大数据工程师");
+        persons[6] = new chapter08.com.hspedu.homework.homework13.Person("mary", 89, "PHP工程师");
+        persons[7] = new chapter08.com.hspedu.homework.homework13.Person("Jack", 62, "director");
+        persons[8] = new chapter08.com.hspedu.homework.homework13.Person("Jack", 38, "director");
+        persons[9] = new chapter08.com.hspedu.homework.homework13.Person("Jack", 54, "director");
 
         //打印数据信息
         for (int i = 0; i < persons.length; i++) {
@@ -21,7 +21,7 @@ public class Homework01 {
         System.out.println();
         //冒泡排序
         int count = 0; //定义一个变量记录每轮循环交换的次数，如果本轮交换的次数为0，就说明拍好序了，就不执行后续循环了
-        Person temp = null;
+        chapter08.com.hspedu.homework.homework13.Person temp = null;
         for (int i = 0; i < persons.length - 1; i++) {//外层循环：n个元素，循环n-1次，每次把一个最大的元素排出来
             count = 0;
             for (int j = 0; j < persons.length - i - 1; j++) {//内层循环：在当前轮次，剩余的 n - 轮次 个元素里面找出最大值并排序
