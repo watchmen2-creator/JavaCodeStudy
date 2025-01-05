@@ -96,6 +96,59 @@ public class Utility {
         return n;
     }
 
+
+
+
+    /**
+     * 自己添加的
+     * 功能：读取键盘输入的小数
+     * @return 整数
+     */
+    public static double readDouble() {
+        double n;
+        for (; ; ) {
+            String str = readKeyBoard(20, false);//一个小数，长度<=20位，不能读空字符串
+            try {
+                n = Double.parseDouble(str);//将字符串转换成小数
+                break;
+            } catch (NumberFormatException e) {
+                System.out.print("数字输入错误，请重新输入：");
+            }
+        }
+        return n;
+    }
+
+    /**
+     * 自己写的
+     * 功能：读取键盘输入的 小数或默认值，如果直接回车，则返回默认值，否则返回输入的整数
+     * @param defaultValue 指定的默认值
+     * @return 整数或默认值
+     */
+    public static double readDouble(double defaultValue) {
+        double n;
+        for (; ; ) {
+            String str = readKeyBoard(20, true);
+            if (str.equals("")) {
+                return defaultValue;
+            }
+
+            //异常处理...
+            try {
+                n = Double.parseDouble(str);
+                break;
+            } catch (NumberFormatException e) {
+                System.out.print("数字输入错误，请重新输入：");
+            }
+        }
+        return n;
+    }
+
+
+
+
+
+
+
     /**
      * 功能：读取键盘输入的指定长度的字符串
      * @param limit 限制的长度
